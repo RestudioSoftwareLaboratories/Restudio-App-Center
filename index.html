@@ -33,9 +33,10 @@
       padding: 0;
     }
 
+    /* 🧭 Top Bar – BLACK as requested */
     .top-bar {
       background-color: #000000;
-      color: #1e1e1e;
+      color: #ffffff;
       height: 70px;
       display: flex;
       align-items: center;
@@ -73,8 +74,8 @@
     }
 
     .top-bar .search-box {
-      background: #f0f2f5;
-      border: 1px solid #d0d4d9;
+      background: #252526;
+      border: 1px solid #3c3c3c;
       border-radius: 8px;
       padding: 0.4rem 1.2rem;
       display: flex;
@@ -87,11 +88,11 @@
     .top-bar .search-box:focus-within {
       border-color: #007acc;
       box-shadow: 0 0 0 3px rgba(0, 122, 204, 0.15);
-      background: #ffffff;
+      background: #2b2b2b;
     }
 
     .top-bar .search-box .material-icons {
-      color: #666666;
+      color: #888888;
       font-size: 20px;
     }
 
@@ -99,7 +100,7 @@
       background: transparent;
       border: none;
       outline: none;
-      color: #1e1e1e;
+      color: #e0e0e0;
       font-size: 0.95rem;
       width: 100%;
     }
@@ -157,7 +158,7 @@
       border: 1px solid #d0d4d9;
     }
 
-    /* 🎯 Hero Banner – WHITE backdrop */
+    /* 🎯 Hero Banner – WHITE backdrop, stats removed */
     .hero-banner {
       border-radius: 12px;
       padding: 2rem 2.5rem;
@@ -170,11 +171,11 @@
       gap: 1.5rem;
       position: relative;
       overflow: hidden;
-      min-height: 180px;
+      min-height: 140px;
       background-size: cover;
       background-position: center;
       transition: background-image 0.5s ease;
-      background-color: #f8fafc; /* fallback white-ish */
+      background-color: #f8fafc;
     }
 
     .hero-banner::before {
@@ -217,32 +218,7 @@
       color: #333333;
     }
 
-    .hero-stats {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      gap: 2.5rem;
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(8px);
-      padding: 0.8rem 2rem;
-      border-radius: 12px;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-    }
-
-    .stat-item {
-      text-align: center;
-    }
-
-    .stat-number {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #007acc;
-    }
-
-    .stat-label {
-      font-size: 0.8rem;
-      color: #444444;
-    }
+    /* hero-stats completely removed as requested */
 
     /* 📂 App Sections */
     .section-title {
@@ -260,19 +236,6 @@
     .section-title .section-icon {
       font-size: 28px;
       color: #007acc;
-    }
-
-    .section-title .see-all {
-      font-size: 0.85rem;
-      color: #007acc;
-      font-weight: 400;
-      cursor: pointer;
-      margin-left: auto;
-    }
-
-    .section-title .see-all:hover {
-      color: #005a9e;
-      text-decoration: underline;
     }
 
     .app-grid {
@@ -503,6 +466,68 @@
       color: #555555;
     }
 
+    /* 🔗 Related Items Section */
+    .related-section {
+      margin: 2rem 2rem 2.5rem;
+      padding: 1.8rem;
+      background: #ffffff;
+      border: 1px solid #e0e4e8;
+      border-radius: 12px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .related-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1e1e1e;
+      margin-bottom: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      border-bottom: 1px solid #e0e4e8;
+      padding-bottom: 0.8rem;
+    }
+
+    .related-title .material-icons {
+      color: #007acc;
+      font-size: 24px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1rem;
+    }
+
+    .related-link {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.6rem 0.8rem;
+      border-radius: 8px;
+      background: #f8fafc;
+      border: 1px solid #e0e4e8;
+      text-decoration: none;
+      color: #333333;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .related-link:hover {
+      background: #eef2f6;
+      border-color: #007acc;
+      color: #007acc;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    }
+
+    .related-link .material-icons {
+      font-size: 20px;
+      color: #007acc;
+    }
+
     /* 🦶 Footer – WHITE */
     .footer {
       margin: 4rem 2rem 0;
@@ -531,11 +556,6 @@
 
     .footer-links a:hover {
       color: #007acc;
-    }
-
-    .stat-star {
-      font-size: 1.8rem;
-      color: #f5a623;
     }
 
     /* ===== SKELETON LOADER – WHITE ADAPT ===== */
@@ -785,6 +805,13 @@
       to { transform: translateY(0); opacity: 1; }
     }
 
+    /* No apps image */
+    .no-apps-image {
+      max-width: 200px;
+      margin-bottom: 1rem;
+      opacity: 0.7;
+    }
+
     /* responsive */
     @media (max-width: 768px) {
       .top-bar {
@@ -807,14 +834,7 @@
         margin: 0 1rem 2rem;
         flex-direction: column;
         text-align: center;
-        min-height: 220px;
-      }
-      .hero-stats {
-        justify-content: center;
-        width: 100%;
-        gap: 1.5rem;
-        padding: 0.6rem 1rem;
-        flex-wrap: wrap;
+        min-height: 160px;
       }
       .app-grid {
         grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -833,6 +853,13 @@
       }
       .section-title {
         margin: 2rem 1rem 1.2rem;
+      }
+      .related-section {
+        margin: 2rem 1rem 2.5rem;
+        padding: 1.5rem;
+      }
+      .related-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
       }
       .footer {
         margin: 4rem 1rem 0;
@@ -874,10 +901,8 @@
         flex-direction: column;
         gap: 0.8rem;
       }
-      .hero-stats {
-        flex-direction: column;
-        gap: 0.8rem;
-        padding: 0.8rem;
+      .related-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -885,7 +910,7 @@
 <body>
 <div class="app-container">
 
-  <!-- 🧭 Top Bar -->
+  <!-- 🧭 Top Bar – BLACK -->
   <div class="top-bar">
     <img src="https://i.postimg.cc/LXvCQ5rt/swrh-restudio.png" alt="Logo">
     <span class="top-bar-title"><span class="app-text">App</span> Center</span>
@@ -917,28 +942,13 @@
     </span>
   </nav>
 
-  <!-- 🎯 Hero Banner with Background -->
+  <!-- 🎯 Hero Banner – stats removed -->
   <div class="hero-banner" id="heroBanner">
     <div class="hero-content">
       <h1>Welcome to <span>App Center</span></h1>
       <p class="hero-subtitle">Discover the best apps for midwOS</p>
     </div>
-    <div class="hero-stats">
-      <div class="stat-item">
-        <div class="stat-number" id="totalApps">0</div>
-        <div class="stat-label">Apps</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">4</div>
-        <div class="stat-label">Categories</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">
-          <span class="material-icons stat-star">star</span>
-        </div>
-        <div class="stat-label">Rating 4.8</div>
-      </div>
-    </div>
+    <!-- hero-stats DELETED as requested -->
   </div>
 
   <!-- 🎮 Featured Section with skeleton -->
@@ -982,7 +992,6 @@
   <!-- 📂 All Apps with skeleton -->
   <div class="section-title">
     <span class="material-icons section-icon">apps</span> All Apps
-    <span class="see-all" id="seeAllBtn">View All</span>
   </div>
   <div class="app-grid" id="appGrid">
     <!-- skeleton cards (6) -->
@@ -1078,6 +1087,29 @@
     </div>
   </div>
 
+  <!-- 🔗 Related Items Section -->
+  <div class="related-section">
+    <div class="related-title">
+      <span class="material-icons">hub</span> Related items
+    </div>
+    <div class="related-grid">
+      <a href="" class="related-link"><span class="material-icons">language</span> Restudio Internet</a>
+      <a href="" class="related-link"><span class="material-icons">slideshow</span> Restudio Presentation</a>
+      <a href="" class="related-link"><span class="material-icons">table_chart</span> Restudio Tables</a>
+      <a href="" class="related-link"><span class="material-icons">article</span> Restudio Documents</a>
+      <a href="" class="related-link"><span class="material-icons">dynamic_form</span> Restudio Forms</a>
+      <a href="" class="related-link"><span class="material-icons">calculate</span> Restudio Math</a>
+      <a href="" class="related-link"><span class="material-icons">map</span> Restudio Maps</a>
+      <a href="" class="related-link"><span class="material-icons">menu_book</span> Restudio Bookshelf</a>
+      <a href="" class="related-link"><span class="material-icons">trending_up</span> Restudio Trends</a>
+      <a href="" class="related-link"><span class="material-icons">code</span> Restudio Script Editor</a>
+      <a href="" class="related-link"><span class="material-icons">contacts</span> Restudio Contacts</a>
+      <a href="" class="related-link"><span class="material-icons">translate</span> Restudio Translate</a>
+      <a href="" class="related-link"><span class="material-icons">image</span> Restudio Images</a>
+      <a href="" class="related-link"><span class="material-icons">calculator</span> Restudio Calculator</a>
+    </div>
+  </div>
+
   <!-- 🦶 Footer -->
   <footer class="footer">
     <span>Restudio <strong>App Center</strong> · Built for <strong>midwOS</strong> © 2026</span>
@@ -1170,8 +1202,6 @@
     const countDev = document.getElementById('countDev');
     const countGames = document.getElementById('countGames');
     const countDesign = document.getElementById('countDesign');
-    const totalApps = document.getElementById('totalApps');
-    const seeAllBtn = document.getElementById('seeAllBtn');
 
     // Modal elements
     const modal = document.getElementById('downloadModal');
@@ -1242,7 +1272,7 @@
     }
 
     function showToast(msg) {
-      toast.textContent = msg || ' Commands copied to clipboard!';
+      toast.textContent = msg || '✅ Commands copied to clipboard!';
       toast.classList.add('show');
       setTimeout(() => {
         toast.classList.remove('show');
@@ -1253,7 +1283,7 @@
       if (!currentApp) return;
       const commands = `# Update package list\nsudo apt update\n\n# Install ${currentApp.name}\nsudo apt install ${currentApp.package}`;
       navigator.clipboard.writeText(commands).then(() => {
-        showToast(' Commands copied to clipboard!');
+        showToast('✅ Commands copied to clipboard!');
       }).catch(() => {
         const textarea = document.createElement('textarea');
         textarea.value = commands;
@@ -1280,8 +1310,8 @@
       if (filtered.length === 0) {
         grid.innerHTML = `
             <div style="grid-column:1/-1; text-align:center; padding:3rem 0; color:#555555;">
-              <span class="material-icons" style="font-size:3rem; color:#888;">search_off</span>
-              <p style="margin-top:0.8rem; font-size:1.1rem; color:#333333;">No apps match your search</p>
+              <img src="https://i.postimg.cc/mr2BsBvt/undraw-notify-drs8.png" alt="No apps" style="max-width:180px; margin-bottom:1.2rem; opacity:0.8;" />
+              <p style="margin-top:0.5rem; font-size:1.1rem; color:#333333; font-weight:500;">No apps match your search</p>
               <p style="font-size:0.9rem; color:#777777;">Try a different category or search term</p>
             </div>
           `;
@@ -1343,7 +1373,6 @@
       countDev.textContent = dev;
       countGames.textContent = games;
       countDesign.textContent = design;
-      totalApps.textContent = all;
     }
 
     function setCategory(category) {
@@ -1364,17 +1393,10 @@
       render();
     });
 
-    seeAllBtn.addEventListener('click', function() {
-      setCategory('all');
-      searchInput.value = '';
-      searchQuery = '';
-      render();
-    });
-
     // --- init ---
     setRandomBackground();
 
-
+    //  LOADER DELAY 7 SECONDS
     setTimeout(() => {
       renderFeatured();
       render();
